@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addValue, decrement, increment, reload } from "./store/counterSlice";
+import { addValue, decrement, increment, reload, sayHello, showMessage } from "./store/counterSlice";
 import { useState } from "react";
 import { addNote, selectNotes } from "./store/notesSlice";
 
@@ -53,6 +53,12 @@ function App() {
           return <li key={idx}>{note}</li>
         })}
       </ul>
+
+      <div>
+      <button onClick={() => dispatch(sayHello())}>Say Hello</button>
+      <button onClick={() => dispatch(showMessage("Привіт Світ"))}>Скажи привіт</button>
+
+      </div>
     </div>
   );
 }

@@ -23,11 +23,18 @@ export const counterSlice = createSlice({
 
         addValue: (state, action) => {
             state.count += action.payload;
-        }
+        },
 
+        sayHello: (state) => {
+            state.count = "Hello world";
+        },
+
+        showMessage: (state, action) => {
+            state.count = action.payload;
+        }
     }
 })
 
-export const { increment, decrement, reload, addValue } = counterSlice.actions;
+export const { increment, decrement, reload, addValue, sayHello, showMessage } = counterSlice.actions;
 
 export default counterSlice.reducer;
